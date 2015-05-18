@@ -1,2 +1,2 @@
 # SerpientesYEscaleras
-Juego de serpientes y escaleras. Hecho con java
+Juego de serpientes y escaleras. Hecho con java.
