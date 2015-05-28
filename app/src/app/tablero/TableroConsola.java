@@ -1,25 +1,30 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Ã¯Â»Â¿
+ * Juego de serpientes y escaleras
+ *
+ * Creado por Ricardo Rodriguez <ricardo96r@gmail.com>
  */
 package app.tablero;
 
+import app.consola.InterfazConsola;
 import app.fichas.Escalera;
 import app.fichas.Jugador;
 import app.fichas.Serpiente;
 
 /**
- * Clase que crea la interfaz de usuario por consola del tablero por una 
- * Matriz de String. Usando por padre la clase Tablero que es imprecindible.
+ * Clase que crea el tablero por consola una 
+ * Matriz de String, usando por padre la clase Tablero que contiene una matriz 
+ * tridimensional de objetos (Fichas). Esta clase solo transforma una matriz de 
+ * objetos en una matriz de String visible por el usuario
  * 
  * @author Ricardo
  */
 public class TableroConsola extends Tablero {
     private String tableroConsola[][];
+    private InterfazConsola interfaz = new InterfazConsola();
 
-    public TableroConsola(int numJugadores, int numSerpientes, int numEscaleras) {
-        super(numJugadores, numSerpientes, numEscaleras);
+    public TableroConsola(int numJugadores, int numSerpientes, int numEscaleras, int tableroDatos[]) {
+        super(numJugadores, numSerpientes, numEscaleras, tableroDatos);
         tableroConsola = new String[8][8];
     }
     
@@ -28,7 +33,7 @@ public class TableroConsola extends Tablero {
      * @return String
      */
     private String mostrarSerpiente() {
-        return "$";
+        return interfaz.setColorSerpiente("$");
     }
     
     /**
@@ -36,7 +41,7 @@ public class TableroConsola extends Tablero {
      * @return String
      */
     private String mostrarEscalera() {
-        return "#";
+        return interfaz.setColorEscalera("#");
     }
     
     /**
@@ -45,7 +50,7 @@ public class TableroConsola extends Tablero {
      * @return String
      */
     private String mostrarJugador(int lugar) {
-        return "J"+(lugar+1);
+        return (char)27+"[31mJ"+(lugar+1)+(char)27+"[0m";
     }
     
     /**
@@ -93,6 +98,31 @@ public class TableroConsola extends Tablero {
     }
    
     /**
+     * Agrega color a la casilla final y la casilla inicial
+     * 
+     * @param x posicion x
+     * @param y posicion y
+     * @param casilla numero en String
+     * @return String con color
+     */
+    private String colorTableroDatos(int x, int y, String casilla) {
+        String cadena = "";
+        if (x % 2 == 0) {
+            y = 7-y;
+        }
+        if(x == tableroDatos[0] && y == tableroDatos[1]) {
+            cadena = interfaz.setColorInicioTablero(casilla);
+        } else {
+            if (x == tableroDatos[2] && y == tableroDatos[3]) {
+                cadena = interfaz.setColorFinalTablero(casilla);
+            } else {
+                cadena = casilla;
+            }
+        }
+        return cadena;
+    }
+    
+    /**
      * Agrega los numeros del 1-64 al tablero
      */
     private void numerosTablero() {
@@ -100,10 +130,10 @@ public class TableroConsola extends Tablero {
         for (int i = 7; i >= 0; i--) {
             for (int j = 0; j < 8; j++) {
                 if (i % 2 != 0) {
-                    tableroConsola[i][j] = Integer.toString(contador);
+                    tableroConsola[i][j] = colorTableroDatos(i,j,Integer.toString(contador));
                     contador++;
                 } else {
-                    tableroConsola[i][7-j] = Integer.toString(contador);
+                    tableroConsola[i][7-j] = colorTableroDatos(i,j,Integer.toString(contador));
                     contador++;
                 }
             }

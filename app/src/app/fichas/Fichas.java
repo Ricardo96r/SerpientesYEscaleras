@@ -1,15 +1,16 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Ã¯Â»Â¿
+ * Juego de serpientes y escaleras
+ *
+ * Creado por Ricardo Rodriguez <ricardo96r@gmail.com>
  */
 package app.fichas;
 
 /**
- *
+ * Clase principal de las fichas. Padre de todas las fichas del juego.
  * @author Ricardo
  */
-public abstract class Fichas {
+public class Fichas {
     protected int posicionX;
     protected int posicionY;
     protected int lugar;
@@ -28,6 +29,11 @@ public abstract class Fichas {
 
     public void setPosicionY(int posicionY) {
         this.posicionY = posicionY;
+    }
+    
+    public void setPosicion(int posicion[]) {
+        posicionX = posicion[0];
+        posicionY = posicion[1];
     }
 
     public int getLugar() {

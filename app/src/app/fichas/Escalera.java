@@ -5,10 +5,8 @@
  */
 package app.fichas;
 
-import app.fichas.Fichas;
-
 /**
- * Clase que maneja las escaleras del juego como sus reglas y funcion
+ * Clase que maneja las escaleras del juego
  * 
  * @author Ricardo
  */

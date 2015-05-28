@@ -5,25 +5,28 @@
  */
 package app.datos;
 
-import java.io.File;
-
 /**
  *
  * @author Ricardo
  */
-public class Datos {
-    protected String archivo = "datos.txt";
+public abstract class Datos {
+    protected String archivo;
+    
+    public Datos(String archivo) {
+        this.archivo = archivo;
+    }
     
     /**
      * Confirma si el archivo existe.
      * 
      * @return boolean
      */
-    public boolean existeArchivo() {
-        File archivo = new File(this.archivo);
-        return archivo.exists();
-    }
+    abstract public boolean existeArchivo();
 
+    /**
+     * Obtiene el nombre del archivo
+     * @return 
+     */
     public String getArchivo() {
         return archivo;
     }

@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Ã¯Â»Â¿
+ * Juego de serpientes y escaleras
+ *
+ * Creado por Ricardo Rodriguez <ricardo96r@gmail.com>
  */
 package app.datos;
 
@@ -16,13 +17,29 @@ import java.util.logging.Logger;
 public class LeerDatos extends Datos {
     private int[] tablero = new int[4];
     private int Serpiente[][];
+    protected String[] datosLineas;
+    
+    /**
+     * Nesesario para pasar por parametro al padre el nombre del archivo
+     */
+    public LeerDatos() {
+        super("datos.txt");
+    }
+    
+    /**
+     * Sobrecarga nesesaria para la clase RankingDatos
+     * @param archivo 
+     */
+    public LeerDatos(String archivo) {
+        super(archivo);
+    }
     
     /**
      * Cantidad de caracteres que tiene el archivo de datos actualmente
      * 
      * @return int cantidad de caracteres
      */
-    private int cantidadDeCaracteresDelArchivo() {
+    protected int cantidadDeCaracteresDelArchivo() {
         int valor;
         int cantidadChar = 0;
         try {
@@ -47,11 +64,10 @@ public class LeerDatos extends Datos {
      * @param numLinea numero de linea [1,infinito)
      * @return String linea
      */
-    private String obtenerLinea(int numLinea) {
+    protected String obtenerLinea(int numLinea) {
         int cantidadChar = cantidadDeCaracteresDelArchivo();
         char datos[] = new char[cantidadChar];
         int valor;
-        String[] datosLineas;
         try {
             FileReader buscar = new FileReader(archivo);
             valor = buscar.read();
@@ -102,6 +118,11 @@ public class LeerDatos extends Datos {
             posicion = 0;
         }
         return datos;
+    }
+    
+    public boolean existeArchivo() {
+        File archivo = new File(this.archivo);
+        return archivo.exists();
     }
     
     /**

@@ -1,12 +1,14 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Ã¯Â»Â¿
+ * Juego de serpientes y escaleras
+ *
+ * Creado por Ricardo Rodriguez <ricardo96r@gmail.com>
  */
 package app.fichas;
 
 /**
- *
+ * Ficha vacia. Esta clase vacia es importante cuando no existe un objeto Ficha 
+ * en la matriz del tablero
  * @author Ricardo
  */
 public class Vacia extends Fichas {

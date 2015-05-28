@@ -1,11 +1,12 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Ã¯Â»Â¿
+ * Juego de serpientes y escaleras
+ *
+ * Creado por Ricardo Rodriguez <ricardo96r@gmail.com>
  */
 package app;
 
-import app.juego.Juego;
+import app.consola.Consola;
 
 /**
  *
@@ -14,11 +15,11 @@ import app.juego.Juego;
 public class App {
 
     /**
+     * Metodo main de la aplicacion. Se inicia el juego por consola
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Juego juego = new Juego();
-        juego.iniciarJuego();
+        Consola consola = new Consola();
+        consola.iniciarJuego();
     }
-    
 }
