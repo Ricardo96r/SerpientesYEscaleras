@@ -1,5 +1,5 @@
 # Juego de Serpientes y Escaleras en java
-El juego es un ejemplo de OPP (pragramación orientado a objetos en java). El juego funciona por la consola de java, por lo cual no tiene interfaz grafica.
+El juego es un ejemplo de OPP (programación orientado a objetos en java). El juego funciona por la consola, por lo cual no tiene interfaz grafica.
 
 ## Especificaciones que se piden
 Usted ha sido contratado por el Departamento de Sistemas y Procesos para automatizar el juego de mesa llamado Serpientes y Escaleras. Para dicho juego se podrá contar con dos o más jugadores, quienes comienzan con una ficha y se turnan para lanzar un dado que les indicará la cantidad de casillas que deben avanzar. Las fichas se mueven según la numeración del tablero, en sentido ascendente. Si al finalizar un movimiento un jugador cae en una casilla donde comienza una escalera, sube por ella hasta la casilla donde ésta termina. Si, por el contrario, cae en una en donde comienza la cabeza de una serpiente, desciende por ésta hasta la casilla donde finaliza su cola.
