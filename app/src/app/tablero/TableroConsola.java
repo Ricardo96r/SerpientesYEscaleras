@@ -1,5 +1,5 @@
 /*
- * Ã¯Â»Â¿
+ * 
  * Juego de serpientes y escaleras
  *
  * Creado por Ricardo Rodriguez <ricardo96r@gmail.com>
